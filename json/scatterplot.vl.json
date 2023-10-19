@@ -1,0 +1,151 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {
+    "text": "Life Expectancy versus Happiness Score by Country",
+    "fontSize": 17,
+    "fontWeight": 600
+  },
+  "description": "A scatterplot showing the correlation between Life Expectancy and Happiness Score of every country having a third dimension using region as different colours to represent each different regions.",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/gcha0022/Assignment_2_3179/main/Dataset/result.csv"
+  },
+  "params": [
+    {
+      "name": "Population_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100000000,
+        "step": 1000000,
+        "name": "Minimum Population: "
+      }
+    },
+    {
+      "name": "region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australia and New Zealand",
+          "Central and Eastern Europe",
+          "Eastern Asia",
+          "Latin America and Caribbean",
+          "Middle East and Northern Africa",
+          "North America",
+          "Southeastern Asia",
+          "Southern Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ],
+        "labels": [
+          "Show All",
+          "Australia and New Zealand",
+          "Central and Eastern Europe",
+          "Eastern Asia",
+          "Latin America and Caribbean",
+          "Middle East and Northern Africa",
+          "North America",
+          "Southeastern Asia",
+          "Southern Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ],
+        "name": "Region Selection: "
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Health (life expectancy)",
+      "type": "quantitative",
+      "scale": {"type": "linear", "domain": [0, 1.8]}
+    },
+    "y": {
+      "field": "Happiness Score",
+      "type": "quantitative",
+      "scale": {"type": "linear", "domain": [2, 9]}
+    },
+    "color": {"field": "Region", "type": "nominal"}
+  },
+  "transform": [
+    {"filter": "region_selection == null || datum.Region == region_selection"},
+    {"filter": "datum.Population > Population_Above"}
+  ],
+  "layer": [
+    {
+      "selection": {
+        "region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        },
+        "grid": {"type": "interval", "bind": "scales"}
+      },
+      "mark": {"type": "circle", "tooltip": true},
+      "encoding": {
+        "size": {
+          "field": "Population",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {"field": "Region", "type": "nominal"},
+        "opacity": {
+          "condition": {"selection": "region_highlight", "value": 0.8},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {
+            "field": "Health (life expectancy)",
+            "type": "quantitative",
+            "format": ","
+          },
+          {"field": "Happiness Score", "type": "quantitative", "format": ","},
+          {"field": "Region", "type": "nominal"},
+          {"field": "Population", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'Finland' || datum['Country'] == 'Honduras' || datum['Country'] == 'Qatar' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Hong Kong' || datum['Country'] == 'South Sudan' ||  datum['Country'] == 'Syria' || datum['Country'] == 'India' || datum['Country'] == 'Mexico' ",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {
+            "field": "Health (life expectancy)",
+            "type": "quantitative",
+            "format": ","
+          },
+          {"field": "Happiness Score", "type": "quantitative", "format": ","},
+          {"field": "Region", "type": "nominal"},
+          {"field": "Population", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ],
+  "background": "white",
+  "config": {}
+}

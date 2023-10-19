@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "padding": 5,
+  "title": {"text": "Country against Happiness Score", "fontSize": 15},
+  "description": "A simple bar chart with embedded data.",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/gcha0022/Assignment_2_3179/main/Dataset/result.csv"
+  },
+  "transform": [
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "Happiness Score", "order": "descending"}]
+    },
+    {"filter": "datum.rank <= 10"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar", "tooltip": true, "binSpacing": 5},
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": {"field": "Happiness Score", "order": "descending"}
+        },
+        "size": {"value": 13},
+        "color": {
+          "condition": {
+            "test": "datum['Country'] == 'Finland' ",
+            "value": "red"
+          },
+          "value": "purple"
+        },
+        "y": {
+          "field": "Happiness Score",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [0, 10]}
+        }
+      }
+    }
+  ],
+  "background": "white",
+  "config": {}
+}
