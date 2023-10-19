@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body style="background-color:#FFFFFF">
+
+<section class="w3-container w3-center w3-content w3-round-large" style="background-color:#B65FCF">
+  <h1 style="font-family: 'Nunito', sans-serif;;text-align:center;font-size:60px;font-weight: bold">WORLD HAPPINESS ANALYSIS</h1>
+  <p style="text-align:center">By Govind Chadha </p>
+</section>
+  
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+<p><strong>Happiness</strong> is a feeling everyone seeks, acting as a friend that makes life joyful. It is not just about personal joy but also about the health and well-being of communities around the world.</p>
+<p>People find happiness in various ways. Some find it in relationships, others in their jobs, and some in the things they own. Each person has unique things that bring them happiness and peace.</p>
+<p>This report aims to understand happiness in different parts of the world. We will look at the <strong>Happiness Score</strong> in various countries, focusing on the <strong>top 10 happiest places</strong>, and study the different levels of happiness in various areas.</p>
+<p>Our main goal is to see if money, specifically <strong>GDP per capita</strong>, affects how happy people are in different countries. We will also explore whether the <strong>freedom to make choices</strong> impacts a country's overall happiness. This report will show how money and freedom are spread out in each country as well.</p>
+<p>A key facet of our exploration will be to determine if a nation's economy, specifically <strong>GDP per capita</strong>, influences its collective happiness. Moreover, we'll investigate if there's a correlation between a country's happiness and the <strong>freedom to make choices</strong> by its residents. The spatial distribution of each nation's GDP per capita and freedom to make choices will also be highlighted in this visualization.</p>
+
+
+</section>
+
+ 
+<section class="w3-container w3-center w3-content w3-round-large" style="background-color:#B65FCF">
+  <h1 style="font-family: 'Nunito', sans-serif;text-align:center"><i>GDP Per Capita Across All Countries And Their Happiness Scores </i></h1>
+</section>
+  
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF;align-items: center">
+  <div class="w3-left" id="viz1"></div>
+</section>
+  
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+
+<p><strong>USA</strong> is the <strong>second largest manufacturer</strong> in the world and the nation's economy is fueled by abundant natural resources.</p>
+
+<p><strong>Saudi Arabia</strong> possesses about <strong>16% of the world's petroleum reserves</strong> and ranks as the largest exporter of petroleum. Its sector accounts for roughly <strong>42% of GDP</strong> and <strong>90% of export earnings</strong>.</p>
+
+<p><strong>Norway</strong> is a leading producer and the <strong>second largest seafood exporter</strong>. Oil and gas exports combined with skilled labor force play a significant role in the country's economy. Meanwhile, <strong>Australia</strong> gains most of its GDP growth from overseas trade. <strong>Iron ore</strong> is the nation’s primary source of export revenue, while <strong>New Zealand's</strong> economy thrives on exporting agricultural commodities.</p>
+
+<p><strong>Western Europe</strong> stands out as the first region to develop a modern economy, primarily hinging on commercial agriculture and the delivery of specialized services.</p>
+
+<p>The rise of <strong>Eastern Asia</strong> can be attributed to rapid modernization bolstered by the integration of cutting-edge technology, which has immensely benefited its economic growth.</p>
+
+<p><strong> ALL THESE ECONOMIC FACTORS RESULTS IN A HIGHER HAPPINESS SCORES IN THESE COUNTRIES</strong><p>
+
+</section>
+
+<section class="w3-container w3-center w3-content w3-round-large" style="background-color:#B65FCF">
+  <h1 style="font-family: 'Nunito', sans-serif;text-align:center"><i>Top 10 Happiest Countries In The World</i></h1>
+</section>
+
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+   
+
+<p><strong style='color: #ef3b2c'>Finland</strong> is hailed as the <strong>happiest place on earth</strong> thanks to its extensive welfare benefits, low levels of corruption, and a well-functioning democracy.</p>
+
+<p><strong>Denmark</strong> boasts one of the most generous retirement systems in the world. Its short working hours play a crucial role in it being the <strong>second happiest country</strong> globally.</p>
+
+<p><strong>Norway</strong> offers tuition-free quality education to its citizens. Furthermore, Norwegians possess a robust network of family ties and a profound sense of identity, factors that significantly contribute to the nation's happiness.</p>
+
+</section>
+
+<section class="w3-container w3-center w3-content regular_section" style="background-color:#FFFFFF">
+  <div class="w3-left" id="viz2"></div>
+</section>
+  
+  
+<section class="w3-container w3-center w3-content w3-round-large" style="background-color:#B65FCF">
+  <h1 style="font-family: 'Nunito', sans-serif;text-align:center"><i>Life Expectancy and Happiness Analysis Based On Region</i></h1>
+</section>
+
+
+  
+<section class="w3-container w3-center w3-content regular_section" style="background-color:#FFFFFF">
+  <div class="w3-left" id="viz3"></div>
+</section>
+  
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+  <p style="font-family: 'Nunito', sans-serif;text-align:left">
+<p><strong>There's a noticeable upward trend</strong> suggesting that countries with a higher Life Expectancy tend to have higher happiness scores. This indicates a positive correlation between Health Quality and the perceived happiness of the population.</p>
+
+    <p><strong>Regions such as Western Europe and North America</strong> showcase countries with both high quality of life and high happiness scores. Conversely, regions like Sub-Saharan Africa and Southern Asia have countries that lean towards the lower end of both metrics.</p>
+
+    <p>Countries like Qatar and Hong Kong have high health quality but don't align perfectly with the trend, suggesting that economic Health isn't the sole determinant of happiness. On the other hand, countries like India have a massive population and a considerable Health score, but the happiness score isn't as high as some Western countries.</p>
+
+    <p><strong>The size of each circle</strong> represents the population of the respective country. This offers a layered understanding where countries with larger circles have a higher population. For example, countries with populations exceeding 500M are represented with the largest circles.</p>
+
+    <p>Despite similarities in Health, countries like Honduras and Mexico have different happiness scores. This highlights that while economy plays a role, cultural, political, and other factors can influence happiness.</p>
+
+</section> 
+
+<section class="w3-container w3-center w3-content w3-round-large" style="background-color:#B65FCF">
+  <h1 style="font-family: 'Nunito', sans-serif;text-align:center"><i>Freedom of choice based on Region</i></h1>
+</section>
+
+   
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+    <p style="font-family: 'Nunito', sans-serif;text-align:left">
+        
+</section>
+<br>
+<section class="w3-container w3-center w3-content regular_section" style="background-color:#FFFFFF">
+    <div class="w3-left" id="viz4"></div>
+</section>
+
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+
+<p><strong>"Australia and New Zealand"</strong> seem to have a singular data point, indicating consistently high freedom to make life choices in this region. It's either aggregated data, or there isn't enough diversity in scores to show a range. <strong>"Western Europe"</strong> also showcases high median scores.</p>
+
+<p> Regions such as <strong>"Latin America and the Caribbean"</strong>, <strong>"Middle East and Northern Africa"</strong>, and <strong>"North America"</strong> exhibit wider interquartile ranges, suggesting a more varied perception of freedom within these areas.</p>
+
+<p><strong>"Southern Asia"</strong> and <strong>"Sub-Saharan Africa"</strong> have significant outliers below their respective lower whiskers. This suggests that while many countries in these regions might have moderate freedom scores, there are specific countries that report significantly lower freedom to make life choices.</p>
+
+<p><strong>"Eastern Asia"</strong> and <strong>"Central and Eastern Europe"</strong> appear to have a relatively consistent and moderate range of freedom scores, without much variability.</p>
+
+<p><strong>"Southeastern Asia"</strong> seems to have a singular or few data points positioned very low on the scale, suggesting limited freedom to make life choices.</p>
+
+</section>
+
+<section class="w3-container w3-center w3-content" style="background-color:#FFFFFF">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+<footer style="background-color:#FFFFFF;height:100px"> </footer>
+<script type="text/javascript">
+
+  var spec1 = "https://raw.githubusercontent.com/gcha0022/Assignment_2_3179/main/json/combined.vl.json";
+  vegaEmbed("#viz1", spec1, { "actions": false }).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+ 
+  var spec2 = "https://raw.githubusercontent.com/gcha0022/Assignment_2_3179/main/json/flag_bar.vl.json";
+  vegaEmbed("#viz2", spec2, { "actions": false }).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec3 = "https://raw.githubusercontent.com/gcha0022/Assignment_2_3179/main/json/scatterplot.vl.json";
+  vegaEmbed("#viz3", spec3, { "actions": false }).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec4 = "https://raw.githubusercontent.com/gcha0022/Assignment_2_3179/main/json/boxplot.json";
+  vegaEmbed("#viz4", spec4, { "actions": false }).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+</body>
+</html>
